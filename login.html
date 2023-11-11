@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style3.css">
+    <title>Login</title>
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById("nome").value;
+            var senha = document.getElementById("senha").value;
+
+            if (nome === "" || senha === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false; 
+            }
+            alert("Login realizado com sucesso!");
+            return true; 
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="banner">
+        <video autoplay muted loop>
+            <source src="static/imgs/916049862.mp4"> 
+        </video>
+    </div>
+
+    <div class="tela-login">
+        <h1>Login</h1>
+        <input type="text" id="nome" placeholder="Nome"><br><br>
+        <input type="password" id="senha" placeholder="Senha">
+        <br><br>
+        <a href="index.html"><button onclick="return validarFormulario()">Entrar</button></a>
+        <a href="tela_de_login_cadastro.html"><button>Voltar</button></a>
+        
+    </div>
+
+
+
+
+</body>
+</html>

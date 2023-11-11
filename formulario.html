@@ -1,0 +1,180 @@
+<!--<?php
+        if(isset($_POST['Enviar'])){
+            print_r($_POST['nome']);
+            print_r('<br>');
+            print_r($_POST['email']);
+            print_r('<br>');
+            print_r($_POST['telefone']);
+            print_r('<br>');
+
+
+        }
+
+
+
+
+
+
+    //if(isset($_POST['submit']))
+    // {
+   //     include_once('config.php');
+    //    $nome = $_POST['nome'];
+    //    $email = $_POST['email'];
+     //   $telefone = $_POST['telefone'];
+     //   $sexo = $_POST['genero'];
+     //   $data_nasc= $_POST['data_nascimento'];
+     //   $cidade = $_POST['cidade'];
+     //   $estado = $_POST['estado'];
+     //   $endereco = $_POST['endereco'];
+
+    //    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,sexo,data_nasc,cidade,estado,endereco)VALUES('$nome','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$endereco')");
+
+
+    // }
+?>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <div class="banner">
+        <video autoplay muted loop>
+            <source src="static/imgs/916049862.mp4"> 
+        </video>
+        
+    </div>
+     
+
+    <div class="box">
+
+
+        <form action="formulario.html" method="POST">
+
+            <fieldset>
+                <legend><b>Mahalo Surf Cadastro  </b></legend><br>
+                <div class="inputBox">
+                    <br>
+
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome Completo</label>
+                </div> <br> <br>
+                <div class="inputBox">
+
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email"class="labelInput">Email</label>
+                </div> <br> <br>
+                <div class="inputBox">
+
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone"class="labelInput">Telefone</label>
+                </div> 
+                <p>Sexo:</p>
+                <input type="radio" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label><br>
+                <input type="radio" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label><br>
+                <input type="radio" name="genero" value="outros" required>
+                <label for="outros">outros</label><br> <br>
+                
+                    
+                        <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                        <input type="date" name="data_nascimento" id="data_nascimento"  required>
+                        
+               <br> <br> <br>
+                <div class="inputBox">
+
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade"class="labelInput">Cidade</label>
+                </div> <br> <br>
+                <div class="inputBox">
+
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado"class="labelInput">Estado</label>
+                </div> <br> <br>
+                <div class="inputBox">
+
+                    <input type="text" name="endereço" id="endereço" class="inputUser" required>
+                    <label for="endereço"class="labelInput">Endereço</label>
+                </div>
+
+                <div class="button-container">
+                    <a href="login.html" class="submit">Enviar</a>
+                    
+                    <a href="tela_de_login_cadastro.html" class="submit">voltar</a>
+                </div>
+                
+
+            </fieldset>
+
+
+
+        </form>
+    </div>
+
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var submitButton = document.querySelector('.button-container .submit');
+            var form = document.querySelector('form');
+    
+            submitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+    
+                if (validateForm()) {
+                    alert('Cadastro feito com sucesso!');
+                    window.location.href = "login.html";
+                } else {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                }
+            });
+    
+            function validateForm() {
+                var nome = document.getElementById('nome').value;
+                var email = document.getElementById('email').value;
+                var telefone = document.getElementById('telefone').value;
+                var genero = document.querySelector('input[name="genero"]:checked');
+                var dataNascimento = document.getElementById('data_nascimento').value;
+                var cidade = document.getElementById('cidade').value;
+                var estado = document.getElementById('estado').value;
+                var endereco = document.getElementById('endereço').value;
+    
+                if (
+                    nome.trim() === '' ||
+                    email.trim() === '' ||
+                    telefone.trim() === '' ||
+                    !genero ||
+                    dataNascimento.trim() === '' ||
+                    cidade.trim() === '' ||
+                    estado.trim() === '' ||
+                    endereco.trim() === ''
+                ) {
+                    return false;
+                }
+    
+                if (!isValidEmail(email)) {
+                    return false;
+                }
+    
+                return true;
+            }
+    
+            function isValidEmail(email) {
+                // Lógica de validação do e-mail
+                return true;
+            }
+        });
+    </script>
+    
+    
+
+
+
+</body>
+</html>
